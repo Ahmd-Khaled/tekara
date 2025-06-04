@@ -30,6 +30,9 @@
           align-items: center;
           justify-content: space-between;
           gap: 4px;
+          @media (max-width: $md-media) {
+            padding: 8px 10px;
+          }
           .itemStart {
             display: flex;
             align-items: center;
@@ -88,6 +91,9 @@
       .avatar {
         padding: 20px;
         // margin-bottom: 50px;
+        @media (max-width: $md-media) {
+          padding: 10px;
+        }
         .logoutBtn {
           background-color: $primary;
           color: $white;
@@ -113,12 +119,20 @@
     }
   }
   @media (max-width: $md-media) {
+    // position: fixed;
+    // z-index: 1000;
+    // left: 0;
+    // top: 0;
+    // height: 100%;
+    // background-color: $white;
   }
 }
 
 .navBarRes {
   width: 84px;
-
+  @media (max-width: $md-media) {
+    width: 64px;
+  }
   .navBarContainer {
     .navList {
       .navItems {

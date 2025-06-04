@@ -8,6 +8,10 @@
   display: flex;
   align-items: center;
   gap: 13px;
+  @media (max-width: $md-media) {
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+  }
   .brandLogo {
     @include circle(41px);
     @include centerElement;
