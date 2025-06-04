@@ -78,7 +78,7 @@ const useLogin = () => {
       }
       setTimeout(() => {
         router.push("/dashboard");
-      }, 2000);
+      }, 500);
       if (responseFromApi.data) {
         // Cookies.set("token", responseFromApi.data.token);
         // Cookies.set("userData", JSON.stringify(responseFromApi.data));
