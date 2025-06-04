@@ -1,0 +1,54 @@
+.header {
+  background-color: $secondary;
+  height: 64px;
+  border-bottom: 1px solid $gray-E6;
+  display: flex;
+  .headerContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-inline-end: 26px;
+    .start {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 100%;
+      .menuButton {
+        cursor: pointer;
+        height: 100%;
+        width: 64px;
+        @include centerElement;
+        @include transition(0.3s);
+        svg {
+          font-size: 32px;
+        }
+        &:hover {
+          color: $primary;
+          svg {
+          }
+        }
+        .iconArrow {
+          color: $primary;
+          font-size: 36px;
+        }
+      }
+      .title {
+        color: $black-31;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+    .end {
+    }
+    @media (max-width: $md-media) {
+      .start {
+        .iconArrow {
+        }
+        .iconBars {
+        }
+      }
+    }
+  }
+}

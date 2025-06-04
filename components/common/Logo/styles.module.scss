@@ -1,0 +1,41 @@
+.navBrand,
+.navBrandRes {
+  height: 63px;
+
+  padding-inline-start: 21px;
+  padding-inline-end: 21px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  .brandLogo {
+    @include circle(41px);
+    @include centerElement;
+    background-color: $primary;
+    color: $white;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .brandInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    @include transition(0.3s);
+    .brandTitle {
+    }
+    .brandDesc {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: $md-media) {
+    // .brandInfo {
+    //   display: none;
+    // }
+  }
+}
+
+.navBrandRes {
+  .brandInfo {
+    display: none;
+  }
+}

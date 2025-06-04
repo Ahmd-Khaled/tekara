@@ -1,0 +1,156 @@
+.navBar,
+.navBarRes {
+  height: 100vh;
+  width: 230px;
+  @include transitionCustom(width, 0.3s);
+
+  .navBarContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .navList {
+      border-top: 1px solid $gray-E6;
+      flex: auto;
+      box-shadow: rgba(0, 0, 0, 0.02) 0rem 0.9375rem 1.875rem 0rem;
+      border-inline-end: 1px solid $gray-E6;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+
+      .navItems {
+        padding-top: 24px;
+        .navItem,
+        .navItemActive {
+          padding: 8px 20px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 4px;
+          .itemStart {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            span,
+            svg {
+              color: $gray-96A;
+              @include transition(0.3s);
+            }
+            svg {
+              font-size: 20px;
+            }
+            span {
+              color: $gray-737;
+              font-weight: 500;
+              font-size: 14px;
+              @include transition(0.3s);
+            }
+          }
+          .itemEnd {
+            @include transition(0.3s);
+
+            svg {
+              font-size: 16px;
+              @include transition(0.3s);
+              color: $gray-C8;
+            }
+          }
+          &:hover {
+            .itemStart {
+              span {
+                color: $primary;
+              }
+            }
+          }
+        }
+        .navItemActive {
+          .itemStart {
+            svg {
+              color: $primary;
+            }
+            span {
+              font-weight: 500;
+            }
+          }
+          .itemEnd {
+            svg {
+              @include transform(rotate(90deg));
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      .avatar {
+        padding: 20px;
+        // margin-bottom: 50px;
+        .logoutBtn {
+          background-color: $primary;
+          color: $white;
+          width: 100%;
+          @include borderRadius(8px);
+          padding: 8px 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+
+          cursor: pointer;
+          @include transition(0.3s);
+          &:hover {
+            background-color: $primary-hover;
+          }
+
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $md-media) {
+  }
+}
+
+.navBarRes {
+  width: 84px;
+
+  .navBarContainer {
+    .navList {
+      .navItems {
+        .navItemActive,
+        .navItem {
+          @include centerElement;
+          @include transition(0.3s);
+          &:hover {
+            svg {
+              color: $primary;
+            }
+          }
+          .itemStart {
+            span {
+              display: none;
+            }
+          }
+          .itemEnd {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .avatar {
+      padding: 0px;
+      .logoutBtn {
+        padding: 8px !important;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
