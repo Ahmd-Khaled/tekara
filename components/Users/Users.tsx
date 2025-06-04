@@ -6,7 +6,7 @@ const Users = () => {
   return (
     <section className={styles.users}>
       <div className={styles.secContainer}>
-        <DataTable
+        {/* <DataTable
           columns={columns}
           data={[]}
           searchHandler={searchHandler}
@@ -14,7 +14,7 @@ const Users = () => {
           filterByDatesHandler={filterByDatesHandler}
           take={take}
           clearFiltersAndSearchHandler={clearFiltersAndSearchHandler}
-        />
+        /> */}
       </div>
     </section>
   );
