@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 
 import {
@@ -9,7 +10,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -17,7 +17,13 @@ import {
   DoubleArrowRightIcon,
 } from "@radix-ui/react-icons";
 
-const TableFooter = ({table}) => {
+import { Table } from "@tanstack/react-table";
+
+interface TableFooterProps<TData> {
+  table: Table<TData>;
+}
+
+const TableFooter = <TData,>({ table }: TableFooterProps<TData>) => {
   return (
     <div className="dark:text-white flex flex-col items-start justify-between px-2 py-4 sm:flex-row sm:items-center">
       <div className="flex-1 text-sm text-muted-foreground">
@@ -26,7 +32,7 @@ const TableFooter = ({table}) => {
       </div>
       <div className="flex flex-col items-end w-full space-x-6 lg:space-x-8 sm:flex-row sm:items-center sm:w-auto">
         <div className="flex items-center space-x-2">
-          <p className="text-sm font-medium ">Rows per page</p>
+          <p className="text-sm font-medium">Rows per page</p>
           <Select
             value={`${table.getState().pagination.pageSize}`}
             onValueChange={(value) => {
@@ -34,7 +40,9 @@ const TableFooter = ({table}) => {
             }}
           >
             <SelectTrigger className="h-8 w-[70px]">
-              <SelectValue placeholder={table.getState().pagination.pageSize} />
+              <SelectValue
+                placeholder={`${table.getState().pagination.pageSize}`}
+              />
             </SelectTrigger>
             <SelectContent side="top">
               {[10, 20, 30, 40, 50].map((pageSize) => (
